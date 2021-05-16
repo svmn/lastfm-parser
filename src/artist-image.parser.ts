@@ -18,7 +18,7 @@ export class ArtistImageParser {
       `https://www.last.fm/music/${artist}/+images`,
     );
     const $ = cheerio.load(html);
-    const imageUrl = $('a.image-list-item img').attr('src');
+    const imageUrl = $('a.image-list-item img').attr('src') ?? '';
     return {
       small: this.getSmallImageUrl(imageUrl),
       large: this.getLargeImageUrl(imageUrl),
