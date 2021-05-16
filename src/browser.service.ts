@@ -13,7 +13,7 @@ export class BrowserService implements OnModuleInit, OnModuleDestroy {
   private browser: Browser;
 
   public async onModuleInit() {
-    this.browser = await puppeteer.launch();
+    this.browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   }
 
   public async onModuleDestroy() {
